@@ -1,1 +1,3 @@
-# laravel-helpers
+## Laravel Helpers
+
+Helpers for Laravel 8+ project

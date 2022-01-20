@@ -1,0 +1,20 @@
+{
+    "name": "zdirnecamlcs96/laravel-helpers",
+    "description": "Helpers for personal use",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Zdirnecamlcs96\\Helpers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "zdirnecamlcs96"
+        }
+    ],
+    "require": {
+        "php" : "^7.4|^8.0|^8.1",
+        "illuminate/support": "^8.80",
+        "illuminate/http": "^8.80"
+    }
+}
