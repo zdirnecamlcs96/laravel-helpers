@@ -2,15 +2,15 @@
 
 namespace Zdirnecamlcs96\Helpers\Traits;
 
-use App\Http\Resources\ApiResource;
-use Illuminate\Foundation\Validation\ValidatesRequests;
+use Zdirnecamlcs96\Helpers\Http\Resources\ApiResource;
+// use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 trait Validation {
 
-    use ValidatesRequests;
+    // use ValidatesRequests;
 
     /**
      * Validate the given request with the given rules.

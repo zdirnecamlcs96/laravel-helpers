@@ -6,8 +6,7 @@ trait Sessions
 {
     public function __refreshCsrfToken()
     {
-        session()->regenerate();
-        return csrf_token();
-
+        Container::__session()->regenerate();
+        return Container::__csrfToken();
     }
 }

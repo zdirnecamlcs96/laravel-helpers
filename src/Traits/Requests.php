@@ -2,9 +2,10 @@
 
 namespace Zdirnecamlcs96\Helpers\Traits;
 
-use App\Http\Resources\ApiResource;
-use Facade\FlareClient\Http\Response;
+use Illuminate\Http\Response;
 use Illuminate\Support\Str;
+use GuzzleHttp\Client;
+use Zdirnecamlcs96\Helpers\Http\Resources\ApiResource;
 
 trait Requests
 {
@@ -26,7 +27,12 @@ trait Requests
     {
         $response = [
             "status" => $status,
-            "message" => __($message),
+            /**
+             * Instead of using __() Laravel helper,
+             *
+             * Get bindings from "Illuminate\Translation\TranslationServiceProvider"
+             */
+            "message" => Container::__translate($message),
             "code" => $code,
             "data" => $data
         ];
@@ -60,7 +66,7 @@ trait Requests
 
     function __currentDomain($prefix = "//")
     {
-        return $prefix . request()->getHost();
+        return $prefix . Container::__request()->getHost();
     }
 
     /**
@@ -72,9 +78,7 @@ trait Requests
      */
     function __requestFilled($name, $default = null)
     {
-        $request = request();
-
-        return ($request->filled($name) && isset($name)) ? $request->get($name) : $default;
+        return (Container::__request()->filled($name) && isset($name)) ? Container::__request()->get($name) : $default;
     }
 
     /**
@@ -104,31 +108,31 @@ trait Requests
 
     function __isApi($type = null)
     {
-        $host = request()->getHost();
+        $host = Container::__request()->getHost();
         return $type
-                ? $host == config("app.{$type}_url")
-                : ($host == config('app.api_url') || $host == config('app.driver_url'));
+                ? $host == Container::__config("app.{$type}_url")
+                : ($host == Container::__config('app.api_url') || $host == Container::__config('app.driver_url'));
     }
 
     function __isWeb()
     {
-        $host = request()->getHost();
-        return $host == config('appurl') || $host == config('app.web_app_url');
+        $host = Container::__request()->getHost();
+        return $host == Container::__config('appurl') || $host == Container::__config('app.web_app_url');
     }
 
     function __isAdmin()
     {
-        return request()->getHost() == config('app.admin_url');
+        return Container::__request()->getHost() == Container::__config('app.admin_url');
     }
 
     function __isMerchant()
     {
-        return request()->getHost() == config('app.merchant_url');
+        return Container::__request()->getHost() == Container::__config('app.merchant_url');
     }
 
     function __isEndpoint()
     {
-        return request()->getHost() == config('app.endpoint_url');
+        return Container::__request()->getHost() == Container::__config('app.endpoint_url');
     }
 
     /**
@@ -190,17 +194,17 @@ trait Requests
 
     function __expectsJson()
     {
-        return request()->expectsJson() || $this->__isApi() || $this->__isEndpoint() || request()->is('api/*');
+        return Container::__request()->expectsJson() || $this->__isApi() || $this->__isEndpoint() || Container::__request()->is('api/*');
     }
 
     public function __getCurl($url) {
-        $client = new \GuzzleHttp\Client();
+        $client = new Client();
         $request = $client->get($url, ['verify' => false]);
         return $request->getBody();
     }
 
     public function __postCurl($url, $body) {
-        $client = new \GuzzleHttp\Client();
+        $client = new Client();
         $response = $client->createRequest("POST", $url, ['body'=>$body]);
         return $client->send($response);
     }
