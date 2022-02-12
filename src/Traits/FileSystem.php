@@ -18,7 +18,7 @@ trait FileSystem
     function __storeImage($file, $type, $fullReso = false)
     {
         try {
-            $path = File::PATH_TO_STORAGE . $type . "/";
+            $path = $this->__normalizeSystemPath(File::PATH_TO_STORAGE . $type . "/");
             $file_name = mb_strtolower($type) . "_" . date("Ymdhis") . rand(11, 99);
             $ofile = Image::make($file);
             $ofile->orientate();
@@ -27,7 +27,7 @@ trait FileSystem
             if (!$this->__directoryExist(storage_path(), $directory)) {
                 Storage::makeDirectory($directory);
             }
-            $ofile->save(public_path($path . $file_name . '.' . $extension), 100);
+            $ofile->save(public_path("{$path}{$file_name}.{$extension}"), 100);
 
             if ($fullReso) {
                 $this->__moveFile($file, $type, $file_name);
@@ -79,5 +79,10 @@ trait FileSystem
     function __getFileOriginalName($file)
     {
         return $file->getClientOriginalName();
+    }
+
+    function __normalizeSystemPath(string $path) : string
+    {
+        return str_replace(array("/", "\\"), DIRECTORY_SEPARATOR, $path);
     }
 }
