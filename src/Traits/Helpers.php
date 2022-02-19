@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace Zdirnecamlcs96\Helpers\Traits;
 
 trait Helpers {
 
