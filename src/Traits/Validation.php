@@ -94,4 +94,24 @@ trait Validation {
         return $attributes;
     }
 
+    /**
+     * Replace validation with classname
+     *
+     * @param  mixed $validation
+     * @param  array $replace
+     * @param  string $column
+     * @param  string $search
+     *
+     * @return string
+     */
+    public function __validateExists($validation, array $replace, string $column = "id", string $search = "?")
+    {
+        if (is_array($validation))
+        {
+            $validation = implode('|', $validation);
+        }
+
+        return "$validation|" . Str::replaceArray($search, $replace, "exists:$search,$column,deleted_at,NULL");
+    }
+
 }
