@@ -8,7 +8,7 @@ trait Helpers {
 
     use ValidatesRequests;
 
-    use Authentication, Env, FCM, FileSystem, Locale, Logging, SMS, Requests, Validation, Date, Str, Others, Sessions, Datatable {
+    use Authentication, Env, FCM, FileSystem, Locale, Logging, SMS, Requests, Validation, Date, Str, Others, Sessions, Datatable, Notification {
         Logging::__normalLog insteadOf FCM, SMS;
         Env::__isDebug insteadOf Requests;
         ValidatesRequests::getValidationFactory insteadOf Validation;

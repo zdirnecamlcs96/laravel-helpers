@@ -47,7 +47,13 @@ trait Others {
             if(empty($checkSlug)){
                 $unique = true;
             }else{
-                $slug = mb_strtolower(trim(mb_ereg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-')) . "-" . $counter;
+                $uniqueness = "";
+
+                if ($counter > 0) {
+                    $uniqueness = "-$counter";
+                }
+
+                $slug = mb_strtolower(trim(mb_ereg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-')) . $uniqueness;
             }
             $counter++;
         }
