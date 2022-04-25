@@ -9,7 +9,26 @@ Helpers for Laravel 8 project
 
 ## How to Use
 
-Please contact me for more information.
+You may include the helper inside `Controller.php`. For more information, you can refer [PHP Traits](https://www.php.net/manual/en/language.oop5.traits.php).
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
+use Zdirnecamlcs96\Helpers\Traits\Helpers; // Import here
+
+class Controller extends BaseController
+{
+    use AuthorizesRequests, DispatchesJobs, Helpers; // Use here
+
+}
+
+```
 
 ## After install
 
