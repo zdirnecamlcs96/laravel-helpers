@@ -2,10 +2,10 @@
 
 Helpers for Laravel 8 project
 
-| Version | Supported |
-| - | - |
-| 8.*  | :white_check_mark: |
-| 9.*  | :question: |
+| Laravel | Version | Supported |
+| - | - | - |
+| 8.*  | v1.0^ | :white_check_mark: |
+| 9.*  | v2.0^ | :question: |
 
 ## How to Use
 
