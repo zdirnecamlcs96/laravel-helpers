@@ -187,11 +187,40 @@ trait Requests
         return $this->__apiFailed($message, $data, $code, null);
     }
 
+    /**
+     * Return json response
+     *
+     * @param  mixed $message
+     * @param  bool $status
+     * @param  int $code
+     * @param  mixed $data
+     * @param  array $debug     Data used for debugging purpose
+     * @return \Illuminate\Http\JsonResponse
+     */
+    function __jsonRsponse($message, bool $status = true, ?int $code = 500, $data = null, ?array $debug = null)
+    {
+        return response()->json($this->__api($debug, $status, $message, $code, $data), $code);
+    }
+
+    /**
+     * Return Datatable result in json format
+     *
+     * @param  mixed $data
+     * @param  int $total
+     * @param  int $draw
+     * @param  mixed $filteredTotal
+     * @return \App\Http\Resources\ApiResource
+     */
     function __apiDataTable($data, int $total, int $draw = 1, $filteredTotal = null)
     {
         return new ApiResource($this->__ajaxDatatable($data, $total, $draw, $filteredTotal));
     }
 
+    /**
+     * Check whether the request expecting json response
+     *
+     * @return void
+     */
     function __expectsJson()
     {
         return Container::__request()->expectsJson() || $this->__isApi() || $this->__isEndpoint() || Container::__request()->is('api/*');
