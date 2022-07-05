@@ -6,6 +6,8 @@ use App\Models\File;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 
 trait FileSystem
 {
