@@ -15,6 +15,14 @@ trait FileSystem
         return in_array($target, $all);
     }
 
+    /**
+     * Store image file to storage directory with different resolutions
+     *
+     * @param  mixed $file
+     * @param  mixed $type
+     * @param  mixed $fullReso
+     * @return void
+     */
     function __storeImage($file, $type, $fullReso = false)
     {
         try {
@@ -51,6 +59,14 @@ trait FileSystem
         }
     }
 
+    /**
+     * Move document file to storage directory
+     *
+     * @param  mixed $file
+     * @param  mixed $type
+     * @param  mixed $file_name
+     * @return void
+     */
     function __moveFile($file, $type, $file_name = null)
     {
         try {
@@ -84,5 +100,33 @@ trait FileSystem
     function __normalizeSystemPath(string $path) : string
     {
         return str_replace(array("/", "\\"), DIRECTORY_SEPARATOR, $path);
+    }
+
+    /**
+     * Upload image file
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\UploadedFile $file
+     * @return null|\App\Models\File
+     */
+    public function __uploadImageFile(Request $request, UploadedFile $file, $type, $storagePath = "storage/")
+    {
+        $uploadedFile = $this->__storeImage($file, $type);
+        if(empty($uploadedFile)) {
+            return null;
+        }
+
+        $oFile = $uploadedFile->original ?? $uploadedFile;
+        $newFile = File::create([
+            "name" => $oFile->filename,
+            "original_name" => $this->__getFileOriginalName($file),
+            "extension" => $oFile->extension,
+            "mime" => $oFile->mime(),
+            "size" => $oFile->filesize(),
+            "path" => "{$storagePath}{$type}/",
+            "ip_address" => $request->ip()
+        ]);
+
+        return $newFile;
     }
 }
