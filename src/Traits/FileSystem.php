@@ -50,6 +50,9 @@ trait FileSystem
                 $lfile->save(public_path($path . $file_name . '_low_resolution.' . $extension), 50);
             }
 
+            // Just in case the folder's permission not able to view by public user
+            chmod($path, 0775);
+
             return $fullReso ? (object)[
                 "original" => $ofile,
                 "low_reso" => $lfile,
