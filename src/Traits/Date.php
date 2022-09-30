@@ -8,6 +8,11 @@ use Illuminate\Support\Str;
 
 trait Date {
 
+    function __createDateFromFormat($format, $dateString)
+    {
+        return !empty($dateString) ? Carbon::createFromFormat($format, $dateString) : null;
+    }
+
     function __formatDateTime($date, $format = "Y-m-d h:i:s")
     {
         return $date ? Carbon::parse($date)->format($format) : null;
