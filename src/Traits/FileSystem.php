@@ -37,7 +37,8 @@ trait FileSystem
             if (!$this->__directoryExist(storage_path(), $directory)) {
                 Storage::makeDirectory($directory);
             }
-            $ofile->save(public_path("{$path}{$file_name}.{$extension}"), 100);
+
+            $ofile->save(public_path("{$path}{$file_name}.{$extension}"));
 
             if ($fullReso) {
                 $this->__moveFile($file, $type, $file_name);
