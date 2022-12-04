@@ -746,7 +746,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v9.38.0",
+            "version": "v9.42.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -1190,16 +1190,16 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v9.38.0",
+            "version": "v9.42.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
-                "reference": "89dba4d3a6fdb867796773c6c227554bbf0e0580"
+                "reference": "91e25adfef6ee3a16aa4038826be19144ef906de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/validation/zipball/89dba4d3a6fdb867796773c6c227554bbf0e0580",
-                "reference": "89dba4d3a6fdb867796773c6c227554bbf0e0580",
+                "url": "https://api.github.com/repos/illuminate/validation/zipball/91e25adfef6ee3a16aa4038826be19144ef906de",
+                "reference": "91e25adfef6ee3a16aa4038826be19144ef906de",
                 "shasum": ""
             },
             "require": {
@@ -1246,7 +1246,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-10-07T19:07:25+00:00"
+            "time": "2022-11-28T14:21:47+00:00"
         },
         {
             "name": "intervention/image",
