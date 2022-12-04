@@ -1138,7 +1138,7 @@
         },
         {
             "name": "illuminate/translation",
-            "version": "v9.38.0",
+            "version": "v9.42.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
