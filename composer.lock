@@ -700,16 +700,16 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v9.50.1",
+            "version": "v9.51.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
-                "reference": "4059d5fcabbe9cc047e3fcd264df73aefc863da9"
+                "reference": "e0bb46f59239c787574d5a202d91982327737459"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/collections/zipball/4059d5fcabbe9cc047e3fcd264df73aefc863da9",
-                "reference": "4059d5fcabbe9cc047e3fcd264df73aefc863da9",
+                "url": "https://api.github.com/repos/illuminate/collections/zipball/e0bb46f59239c787574d5a202d91982327737459",
+                "reference": "e0bb46f59239c787574d5a202d91982327737459",
                 "shasum": ""
             },
             "require": {
@@ -751,20 +751,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-02-01T03:39:02+00:00"
+            "time": "2023-02-03T19:27:44+00:00"
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v9.50.1",
+            "version": "v9.51.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
-                "reference": "5b40f51ccb07e0e7b1ec5559d8db9e0e2dc51883"
+                "reference": "bea24daa0fa84b7e7b0d5b84f62c71b7e2dc3364"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/conditionable/zipball/5b40f51ccb07e0e7b1ec5559d8db9e0e2dc51883",
-                "reference": "5b40f51ccb07e0e7b1ec5559d8db9e0e2dc51883",
+                "url": "https://api.github.com/repos/illuminate/conditionable/zipball/bea24daa0fa84b7e7b0d5b84f62c71b7e2dc3364",
+                "reference": "bea24daa0fa84b7e7b0d5b84f62c71b7e2dc3364",
                 "shasum": ""
             },
             "require": {
@@ -797,7 +797,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-07-29T19:44:19+00:00"
+            "time": "2023-02-01T21:42:32+00:00"
         },
         {
             "name": "illuminate/container",
@@ -852,7 +852,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v9.50.1",
+            "version": "v9.51.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -1021,7 +1021,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v9.50.1",
+            "version": "v9.51.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -1123,21 +1123,22 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v9.50.1",
+            "version": "v9.51.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "0b746376f8433914a12f127ce37c7d2609327d05"
+                "reference": "dc21872d7cadde6fc47c613b5ee630cbfd619b1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/0b746376f8433914a12f127ce37c7d2609327d05",
-                "reference": "0b746376f8433914a12f127ce37c7d2609327d05",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/dc21872d7cadde6fc47c613b5ee630cbfd619b1f",
+                "reference": "dc21872d7cadde6fc47c613b5ee630cbfd619b1f",
                 "shasum": ""
             },
             "require": {
                 "doctrine/inflector": "^2.0",
-                "ext-json": "*",
+                "ext-ctype": "*",
+                "ext-filter": "*",
                 "ext-mbstring": "*",
                 "illuminate/collections": "^9.0",
                 "illuminate/conditionable": "^9.0",
@@ -1189,7 +1190,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-02-01T16:43:11+00:00"
+            "time": "2023-02-06T16:49:20+00:00"
         },
         {
             "name": "illuminate/translation",
