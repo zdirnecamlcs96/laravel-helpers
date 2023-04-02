@@ -984,7 +984,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v9.52.4",
+            "version": "v9.52.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -1282,7 +1282,7 @@
         },
         {
             "name": "illuminate/translation",
-            "version": "v9.52.4",
+            "version": "v9.52.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
